@@ -26,7 +26,7 @@ const Location = () => {
           </p>
           <img
             className={`location__image ${isInView ? "location__image--visible" : ""}`}
-            src="/location.webp"
+            src="/location.jpeg"
             alt="Место свадьбы"
           />
           <a

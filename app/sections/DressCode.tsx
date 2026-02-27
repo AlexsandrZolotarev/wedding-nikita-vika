@@ -6,32 +6,32 @@ import { useInView } from "../hooks/use-in-view";
 const dressCodeData = [
   {
     id: 1,
-    color: "Бежелый",
+    color: "Бежевый",
     images: [
       "/dress-code/girls/beige1.jpg",
-      "/dress-code/girls/beige2.jfif",
-      "/dress-code/girls/beige3.jfif",
-      "/dress-code/girls/beige4.jfif",
+      "/dress-code/girls/beige2.png",
+      "/dress-code/girls/beige3.jpeg",
+      "/dress-code/girls/beige4_compressed.jpeg",
     ],
   },
   {
     id: 2,
-    color: "Светло-cерый",
+    color: "Светло-серый",
     images: [
-      "/dress-code/girls/light-grey1.jfif",
-      "/dress-code/girls/light-grey2.jfif",
-      "/dress-code/girls/light-grey3.jfif",
-      "/dress-code/girls/light-grey4.jfif",
+      "/dress-code/girls/light-grey1_compressed.jpeg",
+      "/dress-code/girls/light-grey2.png",
+      "/dress-code/girls/light-grey3_compressed.jpeg",
+      "/dress-code/girls/light-grey4_compressed.jpeg",
     ],
   },
   {
     id: 3,
     color: "Мятный",
     images: [
-      "/dress-code/girls/mint1.jfif",
-      "/dress-code/girls/mint2.jfif",
-      "/dress-code/girls/mint3.jfif",
-      "/dress-code/girls/mint4.jfif",
+      "/dress-code/girls/mint1_compressed.jpeg",
+      "/dress-code/girls/mint2_compressed.jpeg",
+      "/dress-code/girls/mint3_compressed.jpeg",
+      "/dress-code/girls/mint4_compressed.jpeg",
     ],
   },
   {
@@ -39,9 +39,9 @@ const dressCodeData = [
     color: "Белый",
     images: [
       "/dress-code/girls/white1.jpg",
-      "/dress-code/girls/white2.jfif",
-      "/dress-code/girls/white3.jfif",
-      "/dress-code/girls/white4.jpg",
+      "/dress-code/girls/white2_compressed.jpeg",
+      "/dress-code/girls/white3_compressed.jpeg",
+      "/dress-code/girls/white4_compressed.jpeg",
     ],
   },
   {
@@ -51,7 +51,7 @@ const dressCodeData = [
       "/dress-code/mens/mint.jpg",
       "/dress-code/mens/mint1.jpg",
       "/dress-code/mens/mint2.jpg",
-      "/dress-code/mens/mint3.jpg",
+      "/dress-code/mens/mint3.jpeg",
     ],
   },
   {
@@ -59,9 +59,9 @@ const dressCodeData = [
     color: "Светло-серый (муж.)",
     images: [
       "/dress-code/mens/light-gray.jpg",
-      "/dress-code/mens/light-gray1.jpg",
+      "/dress-code/mens/light-gray1.jpeg",
       "/dress-code/mens/light-gray2.jpg",
-      "/dress-code/mens/light-gray3.jpg",
+      "/dress-code/mens/light-gray3.jpeg",
     ],
   },
   {
@@ -70,7 +70,7 @@ const dressCodeData = [
     images: [
       "/dress-code/mens/light-green.jpg",
       "/dress-code/mens/light-green1.jpg",
-      "/dress-code/mens/light-green2.jpg",
+      "/dress-code/mens/light-green2.jpeg",
       "/dress-code/mens/light-green3.jpg",
     ],
   },

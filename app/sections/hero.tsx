@@ -24,7 +24,7 @@ const Hero = () => {
         <p className="photo__title">- им буду я 💝</p>
       </div>
       <div className="hero__nikita photo">
-        <img src="/Vika.webp" alt="Мальчик Никита" aria-hidden="true" />
+        <img src="/Vika.jpeg" alt="Мальчик Никита" aria-hidden="true" />
         <p className="photo__title">
           - интересно, кто будет моим мужем, когда я вырасту?
         </p>
