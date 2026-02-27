@@ -1,0 +1,219 @@
+@use "../helpers/" as *;
+
+.wishes {
+  position: relative;
+  width: 100%;
+  padding: rem(80) 0;
+  overflow: hidden;
+  width: 100%;
+
+  transition:
+    opacity 0.8s ease 0.6s,
+    transform 0.8s ease 0.6s;
+  background: url("/hero.jpeg") no-repeat;
+  background-size: cover;
+  &__back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dark);
+    opacity: 0.3;
+  }
+  &__container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 rem(20);
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: rem(50);
+    @include fluid-text(48, 32);
+    font-weight: 600;
+    color: var(--color-dark);
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--color-primary);
+    }
+    @include mobile {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__text {
+    max-width: 700px;
+    margin: 0 auto rem(60);
+    text-align: center;
+    @include fluid-text(25, 20);
+    line-height: 1.6;
+    color: var(--color-gray);
+    font-style: italic;
+
+    &-highlight {
+      color: var(--color-primary);
+      font-weight: 600;
+      font-style: normal;
+    }
+  }
+
+  &__slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 rem(50);
+    @include mobile {
+      padding: 0;
+    }
+  }
+
+  &__track {
+    overflow: hidden;
+  }
+
+  &__list {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+
+  &__slide {
+    flex: 0 0 100%;
+    padding: 0 rem(15);
+  }
+
+  &__card {
+    background: white;
+    border-radius: rem(20);
+    padding: rem(40) rem(30);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 40px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &__icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto rem(25);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__quote {
+    @include fluid-text(24, 18);
+    line-height: 1.5;
+    color: var(--color-dark);
+    margin-bottom: rem(25);
+    font-weight: 500;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '"';
+      font-size: rem(40);
+      color: var(--color-primary);
+      opacity: 0.3;
+      position: absolute;
+    }
+
+    &::before {
+      top: -20px;
+      left: -15px;
+    }
+
+    &::after {
+      bottom: -40px;
+      right: -15px;
+    }
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: rem(15);
+    margin-top: rem(20);
+    padding-top: rem(20);
+    border-top: 1px solid var(--color-gray-light);
+  }
+
+  &__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__name {
+    @include fluid-text(18, 16);
+    font-weight: 600;
+    color: var(--color-dark);
+  }
+
+  &__button {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    gap: rem(12);
+  }
+  &__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(20);
+    margin-top: rem(30);
+  }
+  &__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--color-dark-40);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: var(--color-primary-light);
+    }
+
+    &--active {
+      background: var(--color-dark-20);
+      transform: scale(1.2);
+    }
+  }
+}

@@ -1,0 +1,110 @@
+@use "../helpers/" as *;
+
+.times {
+  position: relative;
+  width: 100%;
+  margin-top: rem(50);
+  position: relative;
+  transition:
+    opacity 0.8s ease 0.6s,
+    transform 0.8s ease 0.6s;
+  background: url("/hero.jpeg") no-repeat;
+  background-size: cover;
+  &__back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-dark);
+    opacity: 0.3;
+  }
+  img {
+    width: 60px;
+    height: 60px;
+  }
+
+  &__body {
+    width: 100%;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: rem(50) 0;
+  }
+  &__title {
+    padding-bottom: 20px;
+    opacity: 0;
+
+    transform: translateY(30px);
+    transition:
+      opacity 0.8s ease 0.3s,
+      transform 0.8s ease 0.3s;
+
+    &--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  &__parts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: rem(70);
+    @include mobile {
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+      flex-direction: column;
+
+      justify-content: center;
+    }
+  }
+  &__part {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    gap: rem(30);
+    color: var(--color-dark);
+    opacity: 0;
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+    transition-delay: calc(0.2s * var(--item-index, 0));
+    transform: translateY(30px);
+    &:nth-child(1) {
+      --item-index: 1;
+    }
+    &:nth-child(2) {
+      --item-index: 2;
+    }
+    &:nth-child(3) {
+      --item-index: 3;
+    }
+    &:nth-child(4) {
+      --item-index: 4;
+    }
+    &--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    &-date {
+      @include fluid-text(40, 25);
+    }
+    &-name {
+      @include fluid-text(25, 18);
+    }
+
+    @include mobile {
+      display: flex;
+      align-items: center;
+      padding-bottom: 0px;
+      text-transform: uppercase;
+      flex-direction: column;
+
+      justify-content: center;
+    }
+  }
+}

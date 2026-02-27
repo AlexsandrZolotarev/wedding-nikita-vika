@@ -1,0 +1,64 @@
+@use "../helpers/" as *;
+
+.friends {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-block: rem(50);
+
+  &__title {
+    text-align: center;
+    font-family: var(--font-family-base);
+    color: var(--color-dark);
+    font-weight: 400;
+    margin-bottom: rem(16);
+    @include fluid-text(60, 40);
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+      opacity 0.8s ease,
+      transform 0.8s ease;
+
+    &--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  &__description {
+    text-align: center;
+    @include fluid-text(25, 20);
+  }
+  &__text {
+    @include fluid-text(25, 16);
+
+    opacity: 0;
+    text-align: center;
+    transform: translateY(30px);
+    transition:
+      opacity 0.8s ease 0.3s,
+      transform 0.8s ease 0.3s;
+
+    &--visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.arrow {
+  position: relative;
+  left: -8px;
+  top: -5px;
+  width: 20px;
+  height: 20px;
+  transition: height 0.2s;
+  transform: rotate(180deg);
+
+  svg {
+    color: black;
+  }
+}
+
+.scroll-indicator {
+}

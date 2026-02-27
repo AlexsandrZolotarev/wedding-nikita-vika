@@ -1,0 +1,183 @@
+@use "../helpers/" as *;
+
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  &__background {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 0;
+      left: 0;
+      z-index: 9;
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-dark);
+      opacity: 0.3;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include fluid-text(100, 50);
+    font-family: var(--font-family-accent);
+    color: var(--color-dark);
+    font-weight: 400;
+    z-index: 100;
+    margin-bottom: #{rem(16)};
+  }
+  &__nikita {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: look-at-each-other-right 6s linear infinite;
+    img {
+      height: 80%;
+      width: 100%;
+      transform: rotate(180deg);
+    }
+    @include mobile {
+      top: 27%;
+      left: 30%;
+    }
+  }
+  &__vika {
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%) rotate(5deg);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: look-at-each-other-left 6s linear infinite;
+
+    img {
+      height: 80%;
+      width: 100%;
+    }
+    @include mobile {
+      top: 58%;
+      left: 69%;
+    }
+  }
+  &__tili {
+    width: 200px;
+    top: 25%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    line-height: 0.5;
+    @include mobile {
+      width: 100px;
+      top: 27%;
+      left: 85%;
+    }
+  }
+  &__groom {
+    top: 60%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    line-height: 0.5;
+    @include mobile {
+      top: 60%;
+      width: 100px;
+      left: 20%;
+    }
+  }
+}
+.photo {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: center;
+  padding: 15px;
+  background-color: var(--color-light);
+  width: rem(300);
+  height: rem(300);
+  z-index: 10;
+  padding-bottom: 0;
+  @include tablet {
+    width: rem(250);
+    height: rem(250);
+  }
+  @include mobile {
+    width: rem(200);
+    height: rem(200);
+    padding: 10px;
+  }
+  &__title {
+    margin-top: 5px;
+    font-family: var(--font-family-base);
+    color: var(--color-dark);
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include fluid-text(18, 14);
+    @include mobile {
+      margin-top: 3px;
+      width: 86%;
+    }
+  }
+}
+.text {
+  position: absolute;
+  @include fluid-text(50, 40);
+  color: var(--color-dark-40);
+  font-family: var(--font-family-accent);
+}
+@keyframes look-at-each-other-left {
+  0% {
+    transform: translate(-50%, -50%) rotate(-3deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(3deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-3deg);
+  }
+}
+
+@keyframes look-at-each-other-right {
+  0% {
+    transform: translate(-50%, -50%) rotate(3deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(-3deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(3deg);
+  }
+}
+.carnaval-flags {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-5deg);
+  width: 50%;
+  z-index: 10;
+}
