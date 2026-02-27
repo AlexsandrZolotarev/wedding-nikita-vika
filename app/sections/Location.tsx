@@ -51,7 +51,7 @@ const Location = () => {
           </p>
           <img
             className={`location__image ${isInView ? "location__image--visible" : ""}`}
-            src="/savory.webp"
+            src="/Savory.webp"
             alt="Место жрачки"
           />
           <a
