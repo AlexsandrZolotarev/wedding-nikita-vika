@@ -8,12 +8,12 @@ export async function POST(request: Request) {
     const data = await request.json();
 
     const message = `
-📋 Новая анкета гостя:
+ Новая анкета гостя:
 
-👤 ФИО: ${data.fullName}
-✅ Присутствие: ${data.attendance}
-🥂 Предпочитаемый алкоголь: ${data.alcohol}
-⚠️ Пищевая аллергия: ${data.allergy || "Нет"}
+ ФИО: ${data.fullName}
+ Присутствие: ${data.attendance}
+ Предпочитаемый алкоголь: ${data.alcohol}
+ Пищевая аллергия: ${data.allergy || "Нет"}
     `;
 
     const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;

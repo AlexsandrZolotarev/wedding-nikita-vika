@@ -5,6 +5,9 @@ const Hero = () => {
       <div className="carnaval-flags" aria-hidden="true">
         <img src="/carnaval-flags.png" alt="" />
       </div>
+      <div className="stars" aria-hidden="true">
+        <img src="/stars.png" alt="" />
+      </div>
       <div className="hero__background" aria-hidden="true">
         <img src="/Hero.jpeg" alt="" />
       </div>

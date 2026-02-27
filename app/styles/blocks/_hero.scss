@@ -147,7 +147,7 @@
 .text {
   position: absolute;
   @include fluid-text(50, 40);
-  color: var(--color-dark-40);
+  color: var(--color-dark-20);
   font-family: var(--font-family-accent);
 }
 @keyframes look-at-each-other-left {
@@ -175,9 +175,16 @@
 }
 .carnaval-flags {
   position: absolute;
-  top: 0;
+  top: 5%;
   left: 0;
-  transform: rotate(-5deg);
-  width: 50%;
+
+  width: 200px;
+  z-index: 10;
+}
+.stars {
+  position: absolute;
+  top: 5%;
+  right: 10%;
+  width: 50px;
   z-index: 10;
 }

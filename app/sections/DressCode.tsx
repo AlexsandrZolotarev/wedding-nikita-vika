@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useInView } from "../hooks/use-in-view";
 
 const dressCodeData = [
@@ -101,7 +101,7 @@ const DressCode = () => {
     setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   }, [totalSlides]);
 
-  const goToSlide = (index) => {
+  const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
 
@@ -139,7 +139,6 @@ const DressCode = () => {
         </p>
       </div>
 
-      {/* Цветные полоски */}
       <div className="dress-code__colors">
         <div
           className={`dress-code__colors-item ${isInView ? "dress-code__colors-item--visible" : ""}`}
@@ -208,7 +207,6 @@ const DressCode = () => {
           </div>
         </div>
 
-        {/* Навигация */}
         <div className="dress-code__actions">
           <button
             className="dress-code__button dress-code__button--prev"

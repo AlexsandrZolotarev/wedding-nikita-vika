@@ -5,7 +5,7 @@
   max-width: 800px;
   margin: rem(50) auto;
   padding: rem(40);
-  background: linear-gradient(135deg, #fff9f0 0%, #fff 100%);
+
   border-radius: rem(30);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   position: relative;
@@ -60,7 +60,7 @@
   }
 
   &__subtitle {
-    @include fluid-text(18, 16);
+    @include fluid-text(25, 20);
     color: var(--color-gray);
     text-align: center;
     margin-bottom: rem(35);
@@ -89,7 +89,7 @@
   }
 
   &__label {
-    @include fluid-text(16, 14);
+    @include fluid-text(20, 16);
 
     color: var(--color-dark);
     display: flex;
@@ -98,7 +98,6 @@
 
     &-required {
       color: #ff4d4f;
-      font-size: rem(14);
       margin-left: rem(4);
     }
 
@@ -112,7 +111,6 @@
   &__input {
     width: 100%;
     padding: rem(14) rem(18);
-    @include fluid-text(16, 14);
     border: 2px solid #e5e7eb;
     border-radius: rem(16);
     background-color: white;
@@ -143,7 +141,7 @@
   &__select {
     width: 100%;
     padding: rem(14) rem(18);
-    @include fluid-text(16, 14);
+    @include fluid-text(18, 16);
     border: 2px solid #e5e7eb;
     border-radius: rem(16);
     background-color: white;
@@ -175,7 +173,7 @@
   &__textarea {
     width: 100%;
     padding: rem(14) rem(18);
-    @include fluid-text(16, 14);
+    @include fluid-text(18, 16);
     border: 2px solid #e5e7eb;
     border-radius: rem(16);
     background-color: white;

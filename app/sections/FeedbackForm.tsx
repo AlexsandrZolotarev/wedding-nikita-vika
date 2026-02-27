@@ -104,8 +104,7 @@ const FeedbackForm = () => {
         <div className="feedback__row">
           <div className="feedback__group">
             <label htmlFor="attendance" className="feedback__label">
-              <span className="feedback__label-icon">✅</span>
-              Вы придете? <span className="feedback__label-required">*</span>
+              Вы придете?
             </label>
             <select
               id="attendance"
@@ -125,7 +124,6 @@ const FeedbackForm = () => {
 
           <div className="feedback__group">
             <label htmlFor="alcohol" className="feedback__label">
-              <span className="feedback__label-icon">🥂</span>
               Ваш выбор? <span className="feedback__label-required">*</span>
             </label>
             <select

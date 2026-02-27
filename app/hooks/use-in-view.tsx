@@ -1,9 +1,15 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 
-export function useInView(options = {}) {
+interface UseInViewOptions {
+  threshold?: number;
+  rootMargin?: string;
+  root?: Element | null;
+}
+
+export function useInView(options: UseInViewOptions = {}) {
   const [isInView, setIsInView] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const element = ref.current;
@@ -17,9 +23,9 @@ export function useInView(options = {}) {
         }
       },
       {
-        threshold: options.threshold || 0.1,
-        rootMargin: options.rootMargin || "0px",
-        ...options,
+        threshold: options.threshold ?? 0.1,
+        rootMargin: options.rootMargin ?? "0px",
+        root: options.root ?? null,
       },
     );
 
@@ -30,7 +36,7 @@ export function useInView(options = {}) {
         observer.unobserve(element);
       }
     };
-  }, [options.threshold, options.rootMargin]);
+  }, [options.threshold, options.rootMargin, options.root]);
 
-  return [ref, isInView];
+  return [ref, isInView] as const;
 }
