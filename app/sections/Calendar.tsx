@@ -6,9 +6,9 @@ const Calendar = () => {
   const [ref, isInView] = useInView({ threshold: 0.3 });
 
   return (
-    <section ref={ref} className="calendar">
+    <section ref={ref} className="calendar ">
       <div className="calendar__back"></div>
-      <div className="calendar__body container">
+      <div className="calendar__body ">
         <div className="calendar__container">
           <h3
             className={`calendar__title ${isInView ? "calendar__title--visible" : ""}`}

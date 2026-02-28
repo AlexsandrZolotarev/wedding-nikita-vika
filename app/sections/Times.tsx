@@ -42,7 +42,7 @@ const Times = () => {
             >
               <img src="kabluki.svg" alt="" />
               <p className="times__part-date">22:00</p>
-              <p className="times__part-name">Заверщение</p>
+              <p className="times__part-name">Завершение</p>
             </div>
           </div>
         </div>

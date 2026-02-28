@@ -2,11 +2,12 @@
 
 .friends {
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-block: rem(50);
 
+  overflow: hidden;
   &__title {
     text-align: center;
     font-family: var(--font-family-base);
@@ -25,7 +26,11 @@
       transform: translateY(0);
     }
   }
+  &__body {
+    padding: 20px;
+  }
   &__description {
+    padding-bottom: rem(50);
     text-align: center;
     @include fluid-text(25, 20);
   }
@@ -43,6 +48,25 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+  .branch-left {
+    @include mobile {
+      top: 20px;
+      left: -60px;
+    }
+  }
+  .branch-right {
+    right: -60px;
+    @include mobile {
+      top: 70%;
+      right: -70%;
+    }
+  }
+  .scroll-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: rem(50);
   }
 }
 

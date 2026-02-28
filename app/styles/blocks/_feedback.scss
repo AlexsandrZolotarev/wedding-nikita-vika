@@ -2,34 +2,38 @@
 
 .feedback {
   width: 100%;
-  max-width: 800px;
-  margin: rem(50) auto;
-  padding: rem(40);
-
+  height: 100%;
   border-radius: rem(30);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
   position: relative;
   overflow: hidden;
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+  &__body {
+    position: relative;
+    z-index: 10;
     width: 100%;
-    height: rem(6);
-    background: linear-gradient(90deg, var(--color-primary), var(--color-mint));
+    max-width: 800px;
+    margin: rem(50) auto;
+    padding: rem(40);
+    background-color: #dadcd7;
+    border-radius: 20px;
+    @include mobile {
+      padding: rem(0);
+    }
   }
-
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #c0c5be;
+    border-radius: 20px;
+    padding: rem(40);
+    @include mobile {
+      padding: rem(15);
+    }
+  }
   @include mobile {
-    margin: rem(30) rem(15);
     padding: rem(25) rem(20);
-    border-radius: rem(20);
-  }
-
-  @include tablet {
-    max-width: 90%;
-    padding: rem(35);
   }
 
   &__title {
@@ -75,7 +79,7 @@
     display: flex;
     flex-direction: column;
     gap: rem(25);
-
+    width: 100%;
     @include mobile {
       gap: rem(20);
     }
@@ -306,6 +310,22 @@
     @include fluid-text(14, 12);
     color: #9ca3af;
     margin-left: rem(8);
+  }
+  .branch-left {
+    z-index: 9;
+    @include mobile {
+      top: 20px;
+      left: -60px;
+    }
+  }
+  .branch-right {
+    z-index: 9;
+    top: 60%;
+    right: -60px;
+    @include mobile {
+      top: 50%;
+      right: -70%;
+    }
   }
 }
 

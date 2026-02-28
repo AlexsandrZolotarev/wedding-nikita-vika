@@ -7,7 +7,13 @@ const Location = () => {
 
   return (
     <section ref={ref} className="location">
-      <div className="location__body container">
+      <div className="branch-right">
+        <img src="/branches/branch_04.png" alt="" />
+      </div>
+      <div className="branch-left">
+        <img src="/branches/branch_06.png" alt="" />
+      </div>
+      <div className="location__body">
         <div className="location__part">
           <h3
             className={`location__title ${isInView ? "location__title--visible" : ""}`}

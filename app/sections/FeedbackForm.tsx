@@ -24,6 +24,8 @@ const FeedbackForm = () => {
   const attendanceOptions = [
     { value: "", label: "Выберите вариант" },
     { value: "Приду с удовольствием", label: "Приду с удовольствием" },
+    { value: "Приду с один", label: "Приду с один" },
+    { value: "Приду с кем-то", label: "Приду с кем-то" },
     { value: "Не смогу присутствовать", label: "Не смогу присутствовать" },
   ];
 
@@ -77,109 +79,119 @@ const FeedbackForm = () => {
 
   return (
     <section className="feedback">
-      <h2 className="feedback__title">
-        Анкета <span className="feedback__title-highlight">гостя</span>
-      </h2>
-      <p className="feedback__subtitle">
-        Пожалуйста, заполните форму — это поможет нам стать ближе
-      </p>
+      <div className="branch-right">
+        <img src="/branches/branch_04.png" alt="" />
+      </div>
+      <div className="branch-left">
+        <img src="/branches/branch_06.png" alt="" />
+      </div>
+      <div className="feedback__body">
+        <div className="feedback__container">
+          <h2 className="feedback__title">
+            Анкета <span className="feedback__title-highlight">гостя</span>
+          </h2>
+          <p className="feedback__subtitle">
+            Пожалуйста, заполните форму — это поможет нам стать ближе
+          </p>
 
-      <form onSubmit={handleSubmit} className="feedback__form">
-        <div className="feedback__group">
-          <label htmlFor="fullName" className="feedback__label">
-            ФИО
-          </label>
-          <input
-            type="text"
-            id="fullName"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleChange}
-            required
-            placeholder="Введите ваше полное имя"
-            className="feedback__input"
-          />
-        </div>
+          <form onSubmit={handleSubmit} className="feedback__form">
+            <div className="feedback__group">
+              <label htmlFor="fullName" className="feedback__label">
+                ФИО
+              </label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                value={formData.fullName}
+                onChange={handleChange}
+                required
+                placeholder="Введите ваше полное имя"
+                className="feedback__input"
+              />
+            </div>
 
-        <div className="feedback__row">
-          <div className="feedback__group">
-            <label htmlFor="attendance" className="feedback__label">
-              Вы придете?
-            </label>
-            <select
-              id="attendance"
-              name="attendance"
-              value={formData.attendance}
-              onChange={handleChange}
-              required
-              className="feedback__select"
+            <div className="feedback__row">
+              <div className="feedback__group">
+                <label htmlFor="attendance" className="feedback__label">
+                  Вы придете?
+                </label>
+                <select
+                  id="attendance"
+                  name="attendance"
+                  value={formData.attendance}
+                  onChange={handleChange}
+                  required
+                  className="feedback__select"
+                >
+                  {attendanceOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="feedback__group">
+                <label htmlFor="alcohol" className="feedback__label">
+                  Ваш выбор? <span className="feedback__label-required">*</span>
+                </label>
+                <select
+                  id="alcohol"
+                  name="alcohol"
+                  value={formData.alcohol}
+                  onChange={handleChange}
+                  required
+                  className="feedback__select"
+                >
+                  {alcoholOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div className="feedback__group">
+              <label htmlFor="allergy" className="feedback__label">
+                Пищевая аллергия
+              </label>
+              <textarea
+                id="allergy"
+                name="allergy"
+                value={formData.allergy}
+                onChange={handleChange}
+                placeholder="Укажите, если есть аллергия на какие-либо продукты"
+                rows={3}
+                className="feedback__textarea"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="feedback__button"
+              disabled={status === "sending"}
             >
-              {attendanceOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
+              {status === "sending" ? "✈️ Отправляем..." : "✉️ Отправить ответ"}
+            </button>
 
-          <div className="feedback__group">
-            <label htmlFor="alcohol" className="feedback__label">
-              Ваш выбор? <span className="feedback__label-required">*</span>
-            </label>
-            <select
-              id="alcohol"
-              name="alcohol"
-              value={formData.alcohol}
-              onChange={handleChange}
-              required
-              className="feedback__select"
-            >
-              {alcoholOptions.map((option) => (
-                <option key={option.value} value={option.value}>
-                  {option.label}
-                </option>
-              ))}
-            </select>
-          </div>
+            {status === "success" && (
+              <div className="feedback__status feedback__status--success">
+                <span className="feedback__icon">✅</span>
+                Спасибо! Ваш ответ успешно отправлен
+              </div>
+            )}
+
+            {status === "error" && (
+              <div className="feedback__status feedback__status--error">
+                <span className="feedback__icon">❌</span>
+                Ошибка при отправке. Попробуйте позже
+              </div>
+            )}
+          </form>
         </div>
-
-        <div className="feedback__group">
-          <label htmlFor="allergy" className="feedback__label">
-            Пищевая аллергия
-          </label>
-          <textarea
-            id="allergy"
-            name="allergy"
-            value={formData.allergy}
-            onChange={handleChange}
-            placeholder="Укажите, если есть аллергия на какие-либо продукты"
-            rows={3}
-            className="feedback__textarea"
-          />
-        </div>
-
-        <button
-          type="submit"
-          className="feedback__button"
-          disabled={status === "sending"}
-        >
-          {status === "sending" ? "✈️ Отправляем..." : "✉️ Отправить ответ"}
-        </button>
-
-        {status === "success" && (
-          <div className="feedback__status feedback__status--success">
-            <span className="feedback__icon">✅</span>
-            Спасибо! Ваш ответ успешно отправлен
-          </div>
-        )}
-
-        {status === "error" && (
-          <div className="feedback__status feedback__status--error">
-            <span className="feedback__icon">❌</span>
-            Ошибка при отправке. Попробуйте позже
-          </div>
-        )}
-      </form>
+      </div>
     </section>
   );
 };

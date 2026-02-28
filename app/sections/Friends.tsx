@@ -57,30 +57,39 @@ const Friends = () => {
   const [ref, isInView] = useInView({ threshold: 0.3 });
 
   return (
-    <section ref={ref} className="friends container">
-      <ScrollIndicator />
-      <h2
-        className="friends__title"
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? "translateY(0)" : "translateY(30px)",
-          transition: "opacity 0.8s ease, transform 0.8s ease",
-        }}
-      >
-        ДОРОГИЕ РОДНЫЕ И ДРУЗЬЯ!
-      </h2>
+    <section ref={ref} className="friends ">
+      <div className="branch-left">
+        <img src="/branches/branch_06.png" alt="" />
+      </div>
+      <div className="branch-right">
+        <img src="/branches/branch_01.png" alt="" />
+      </div>
+      <div className="friends__body">
+        <ScrollIndicator />
+        <h2
+          className="friends__title"
+          style={{
+            opacity: isInView ? 1 : 0,
+            transform: isInView ? "translateY(0)" : "translateY(30px)",
+            transition: "opacity 0.8s ease, transform 0.8s ease",
+          }}
+        >
+          ДОРОГИЕ РОДНЫЕ И ДРУЗЬЯ!
+        </h2>
 
-      <p
-        style={{
-          opacity: isInView ? 1 : 0,
-          transform: isInView ? "translateY(0)" : "translateY(30px)",
-          transition: "opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s",
-        }}
-        className="friends__description"
-      >
-        Спешим сообщить радостную новость — мы женимся! <br></br> В этот день мы
-        очень хотим оказаться в окружении самых близких и дорогих для нас людей.
-      </p>
+        <p
+          style={{
+            opacity: isInView ? 1 : 0,
+            transform: isInView ? "translateY(0)" : "translateY(30px)",
+            transition: "opacity 0.8s ease 0.3s, transform 0.8s ease 0.3s",
+          }}
+          className="friends__description"
+        >
+          Спешим сообщить радостную новость — мы женимся! <br></br> В этот день
+          мы очень хотим оказаться в окружении самых близких и дорогих для нас
+          людей.
+        </p>
+      </div>
     </section>
   );
 };

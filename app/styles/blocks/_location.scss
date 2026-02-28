@@ -5,7 +5,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-block: rem(50);
+
+  position: relative;
+  overflow: hidden;
+  &__body {
+    padding-bottom: rem(50);
+  }
   &__subtitle {
     text-align: center;
     color: var(--color-dark);
@@ -25,7 +30,7 @@
     margin-bottom: 10px;
     text-align: center;
     color: var(--color-dark);
-    @include fluid-text(25, 16);
+    @include fluid-text(25, 20);
     opacity: 0;
     transform: translateX(-30px);
     transition:
@@ -55,6 +60,7 @@
       transform: translateX(0);
     }
   }
+
   &__part {
     display: flex;
     flex-direction: column;
@@ -155,6 +161,7 @@
     z-index: 100;
   }
   &__link {
+    @include fluid-text(18, 17);
     margin-top: 20px;
     padding: 10px 20px;
     border-radius: 12px;
@@ -175,5 +182,18 @@
     width: 0.5px;
     background-color: black;
     height: 70px;
+  }
+  .branch-left {
+    @include mobile {
+      left: -60px;
+    }
+  }
+  .branch-right {
+    top: 69%;
+    right: -60px;
+    @include mobile {
+      top: 69%;
+      right: -113%;
+    }
   }
 }
