@@ -8,10 +8,20 @@ const Location = () => {
   return (
     <section ref={ref} className="location">
       <div className="branch-right">
-        <img src="/branches/branch_04.png" alt="" />
+        <img
+          loading="lazy"
+          decoding="async"
+          src="/branches/branch_04.png"
+          alt=""
+        />
       </div>
       <div className="branch-left">
-        <img src="/branches/branch_06.png" alt="" />
+        <img
+          loading="lazy"
+          decoding="async"
+          src="/branches/branch_06.png"
+          alt=""
+        />
       </div>
       <div className="location__body">
         <div className="location__part">
@@ -33,6 +43,8 @@ const Location = () => {
           <img
             className={`location__image ${isInView ? "location__image--visible" : ""}`}
             src="/location.jpeg"
+            loading="lazy"
+            decoding="async"
             alt="Место свадьбы"
           />
           <a
@@ -59,6 +71,8 @@ const Location = () => {
             className={`location__image ${isInView ? "location__image--visible" : ""}`}
             src="/Savory.webp"
             alt="Место жрачки"
+            loading="lazy"
+            decoding="async"
           />
           <a
             className={`location__link ${isInView ? "location__link--visible" : ""}`}
