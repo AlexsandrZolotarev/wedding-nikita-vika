@@ -26,7 +26,7 @@ const FeedbackForm = () => {
   const attendanceOptions = [
     { value: "", label: "Выберите вариант" },
     { value: "Приду один", label: "Приду один" },
-    { value: "Приду с кем-то", label: "Приду с кем-то" },
+    { value: "Приду с парой", label: "Приду с парой" },
     { value: "Не смогу присутствовать", label: "Не смогу присутствовать" },
   ];
 
@@ -173,7 +173,7 @@ const FeedbackForm = () => {
             {formData.attendance === "Приду с кем-то" && (
               <div className="feedback__group">
                 <label htmlFor="companions" className="feedback__label">
-                  Если вы приедете с кем-то, введите имена гостей
+                  Если вы приедете с кем-то, введите ФИО гостей
                 </label>
                 <textarea
                   id="companions"
