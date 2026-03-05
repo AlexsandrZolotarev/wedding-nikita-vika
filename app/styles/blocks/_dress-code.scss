@@ -75,7 +75,7 @@
     @include fluid-text(25, 20);
     &-item {
       width: 50px;
-      height: 200px;
+      height: 250px;
       filter: brightness(0.9);
       opacity: 0;
       transition:
@@ -116,16 +116,11 @@
         }
       }
       &:nth-child(3) {
+        background-color: rgb(222, 185, 127);
         p {
           position: absolute;
           color: white;
-        }
-        img {
-          --item-index: 3;
-          filter: brightness(0.7);
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+          transform: rotate(270deg) translateX(-70px);
         }
       }
       &:nth-child(4) {

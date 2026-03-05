@@ -7,6 +7,7 @@ type FormData = {
   attendance: string;
   alcohol: string;
   allergy: string;
+  companions: string;
 };
 
 type FormStatus = "idle" | "sending" | "success" | "error";
@@ -17,14 +18,14 @@ const FeedbackForm = () => {
     attendance: "",
     alcohol: "",
     allergy: "",
+    companions: "",
   });
 
   const [status, setStatus] = useState<FormStatus>("idle");
 
   const attendanceOptions = [
     { value: "", label: "Выберите вариант" },
-    { value: "Приду с удовольствием", label: "Приду с удовольствием" },
-    { value: "Приду с один", label: "Приду с один" },
+    { value: "Приду один", label: "Приду один" },
     { value: "Приду с кем-то", label: "Приду с кем-то" },
     { value: "Не смогу присутствовать", label: "Не смогу присутствовать" },
   ];
@@ -49,7 +50,18 @@ const FeedbackForm = () => {
     >,
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    setFormData((prev) => {
+      if (name === "attendance" && value !== "Приду с кем-то") {
+        return {
+          ...prev,
+          [name]: value,
+          companions: "",
+        };
+      }
+
+      return { ...prev, [name]: value };
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -68,7 +80,13 @@ const FeedbackForm = () => {
       if (!response.ok) throw new Error();
 
       setStatus("success");
-      setFormData({ fullName: "", attendance: "", alcohol: "", allergy: "" });
+      setFormData({
+        fullName: "",
+        attendance: "",
+        alcohol: "",
+        allergy: "",
+        companions: "",
+      });
 
       setTimeout(() => setStatus("idle"), 3000);
     } catch {
@@ -152,7 +170,23 @@ const FeedbackForm = () => {
                 </select>
               </div>
             </div>
-
+            {formData.attendance === "Приду с кем-то" && (
+              <div className="feedback__group">
+                <label htmlFor="companions" className="feedback__label">
+                  Если вы приедете с кем-то, введите имена гостей
+                </label>
+                <textarea
+                  id="companions"
+                  name="companions"
+                  value={formData.companions}
+                  onChange={handleChange}
+                  required
+                  placeholder="Например: Анна Иванова, Сергей Петров"
+                  rows={3}
+                  className="feedback__textarea"
+                />
+              </div>
+            )}
             <div className="feedback__group">
               <label htmlFor="allergy" className="feedback__label">
                 Пищевая аллергия

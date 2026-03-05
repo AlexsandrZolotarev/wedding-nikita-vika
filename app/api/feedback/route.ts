@@ -12,6 +12,7 @@ export async function POST(request: Request) {
 
  ФИО: ${data.fullName}
  Присутствие: ${data.attendance}
+ Гости: ${data.companions || "Без сопровождающих"}
  Предпочитаемый алкоголь: ${data.alcohol}
  Пищевая аллергия: ${data.allergy || "Нет"}
     `;

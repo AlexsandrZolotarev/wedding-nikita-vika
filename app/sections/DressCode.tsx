@@ -36,12 +36,12 @@ const dressCodeData = [
   },
   {
     id: 4,
-    color: "Белый",
+    color: "Светло-коричневый",
     images: [
-      "/dress-code/girls/white1.jpg",
-      "/dress-code/girls/white2_compressed.jpeg",
-      "/dress-code/girls/white3_compressed.jpeg",
-      "/dress-code/girls/white4_compressed.jpeg",
+      "/dress-code/girls/light-brown1.jpeg",
+      "/dress-code/girls/light-brown2.jpg",
+      "/dress-code/girls/light-brown3.jpg",
+      "/dress-code/girls/light-brown4.jfif",
     ],
   },
   {
@@ -76,12 +76,12 @@ const dressCodeData = [
   },
   {
     id: 8,
-    color: "Белый (муж.)",
+    color: "Светло-коричневый (муж.)",
     images: [
-      "/dress-code/mens/white1.jpg",
-      "/dress-code/mens/white2.jpg",
-      "/dress-code/mens/white3.jpg",
-      "/dress-code/mens/white4.jpg",
+      "/dress-code/mens/light-brown1.jpg",
+      "/dress-code/mens/light-brown2.jpg",
+      "/dress-code/mens/light-brown3.jpg",
+      "/dress-code/mens/light-brown4.jpg",
     ],
   },
 ];
@@ -153,8 +153,8 @@ const DressCode = () => {
         <div
           className={`dress-code__colors-item ${isInView ? "dress-code__colors-item--visible" : ""}`}
         >
-          <img src="/dress-code.jpg" alt="" />
-          <p>Белый</p>
+          {/* <img src="/dress-code.jpg" alt="" /> */}
+          <p>Светло-коричневый</p>
         </div>
         <div
           className={`dress-code__colors-item ${isInView ? "dress-code__colors-item--visible" : ""}`}
@@ -193,6 +193,8 @@ const DressCode = () => {
                       <img
                         src={image}
                         alt={`${item.color} ${imgIndex + 1}`}
+                        loading="lazy"
+                        decoding="async"
                         style={{
                           width: "100%",
                           height: "auto",
