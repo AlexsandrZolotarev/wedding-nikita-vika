@@ -282,12 +282,6 @@
     font-size: rem(20);
     font-weight: 600;
 
-    &:hover:not(:disabled) {
-      background: var(--color-primary);
-      color: var(--color-white);
-      transform: scale(1.1);
-    }
-
     &:disabled {
       opacity: 0.3;
       cursor: not-allowed;

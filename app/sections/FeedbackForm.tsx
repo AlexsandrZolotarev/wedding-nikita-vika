@@ -52,7 +52,7 @@ const FeedbackForm = () => {
     const { name, value } = e.target;
 
     setFormData((prev) => {
-      if (name === "attendance" && value !== "Приду с кем-то") {
+      if (name === "attendance" && value !== "Приду с парой") {
         return {
           ...prev,
           [name]: value,
@@ -170,7 +170,7 @@ const FeedbackForm = () => {
                 </select>
               </div>
             </div>
-            {formData.attendance === "Приду с кем-то" && (
+            {formData.attendance === "Приду с парой" && (
               <div className="feedback__group">
                 <label htmlFor="companions" className="feedback__label">
                   Если вы приедете с кем-то, введите ФИО гостей
@@ -181,7 +181,7 @@ const FeedbackForm = () => {
                   value={formData.companions}
                   onChange={handleChange}
                   required
-                  placeholder="Например: Анна Иванова, Сергей Петров"
+                  placeholder="Например: Павел Козырев Александрович , Сергей Петров Иванович"
                   rows={3}
                   className="feedback__textarea"
                 />
