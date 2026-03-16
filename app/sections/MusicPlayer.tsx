@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const MusicPlayer = () => {
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [userInteracted, setUserInteracted] = useState(false);
 
   useEffect(() => {
