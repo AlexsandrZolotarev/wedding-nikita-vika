@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ваш код входа в CleverRenta</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #f5f1eb;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #4f3f31;
+    "
+  >
+    <table
+      role="presentation"
+      width="100%"
+      cellspacing="0"
+      cellpadding="0"
+      border="0"
+      style="background-color: #f5f1eb"
+    >
+      <tbody>
+        <tr>
+          <td align="center" style="padding: 32px 16px">
+            <table
+              role="presentation"
+              width="100%"
+              cellspacing="0"
+              cellpadding="0"
+              border="0"
+              style="
+                max-width: 560px;
+                background-color: #ffffff;
+                border: 1px solid #eadfd2;
+                border-radius: 20px;
+                overflow: hidden;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td
+                    align="center"
+                    style="
+                      padding: 28px 24px 20px 24px;
+                      background-color: #f6f1ea;
+                      border-bottom: 1px solid #eadfd2;
+                    "
+                  >
+                    <img
+                      src="${env.appUrl}/email/logo.png"
+                      alt="CleverRenta"
+                      style="
+                        display: block;
+                        margin: 0 auto 12px auto;
+                        max-width: 180px;
+                        width: 100%;
+                        height: auto;
+                        border: 0;
+                      "
+                    />
+
+                    <div
+                      style="
+                        font-size: 14px;
+                        line-height: 22px;
+                        color: #8b7358;
+                        font-weight: 600;
+                      "
+                    >
+                      Аренда мебели для дома и бизнеса
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 32px 28px 16px 28px">
+                    <div
+                      style="
+                        font-size: 26px;
+                        line-height: 34px;
+                        font-weight: 700;
+                        color: #6f5a43;
+                        margin-bottom: 14px;
+                      "
+                    >
+                      Код входа
+                    </div>
+
+                    <div
+                      style="
+                        font-size: 16px;
+                        line-height: 25px;
+                        color: #5f5142;
+                        margin-bottom: 12px;
+                      "
+                    >
+                      Здравствуйте, ${params.name}!
+                    </div>
+
+                    <div
+                      style="
+                        font-size: 16px;
+                        line-height: 25px;
+                        color: #5f5142;
+                        margin-bottom: 22px;
+                      "
+                    >
+                      Вы запросили код для входа в личный кабинет CleverRenta.
+                    </div>
+
+                    <div
+                      style="
+                        background-color: #f6f1ea;
+                        border: 1px solid #d8c8b8;
+                        border-radius: 16px;
+                        text-align: center;
+                        padding: 20px 16px;
+                        margin-bottom: 22px;
+                      "
+                    >
+                      <div
+                        style="
+                          font-size: 34px;
+                          line-height: 40px;
+                          font-weight: 700;
+                          letter-spacing: 8px;
+                          color: #7a6248;
+                        "
+                      >
+                        ${params.code}
+                      </div>
+                    </div>
+
+                    <div
+                      style="
+                        font-size: 15px;
+                        line-height: 24px;
+                        color: #6a5a49;
+                        margin-bottom: 8px;
+                      "
+                    >
+                      Код действует <strong>10 минут</strong>.
+                    </div>
+
+                    <div
+                      style="
+                        font-size: 15px;
+                        line-height: 24px;
+                        color: #6a5a49;
+                        margin-bottom: 8px;
+                      "
+                    >
+                      Никому не передавайте этот код, даже если вас об этом
+                      просят.
+                    </div>
+
+                    <div
+                      style="
+                        font-size: 15px;
+                        line-height: 24px;
+                        color: #6a5a49;
+                        margin-bottom: 0;
+                      "
+                    >
+                      Если это были не вы, просто проигнорируйте это письмо.
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 8px 28px 0 28px">
+                    <div
+                      style="
+                        height: 1px;
+                        background-color: #eadfd2;
+                        font-size: 0;
+                        line-height: 0;
+                      "
+                    >
+                      &nbsp;
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding: 20px 28px 28px 28px">
+                    <div
+                      style="
+                        font-size: 14px;
+                        line-height: 22px;
+                        color: #8a7a69;
+                        margin-bottom: 8px;
+                      "
+                    >
+                      С уважением,<br />
+                      команда CleverRenta
+                    </div>
+
+                    <div
+                      style="
+                        font-size: 13px;
+                        line-height: 21px;
+                        color: #9a8b7b;
+                        margin-bottom: 6px;
+                      "
+                    >
+                      Это автоматическое письмо. Пожалуйста, не отвечайте на
+                      него.
+                    </div>
+
+                    <div
+                      style="font-size: 13px; line-height: 21px; color: #9a8b7b"
+                    >
+                      ${env.appUrl}
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table
+              role="presentation"
+              width="100%"
+              cellspacing="0"
+              cellpadding="0"
+              border="0"
+              style="max-width: 560px"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    align="center"
+                    style="
+                      padding: 16px 12px 0 12px;
+                      font-size: 12px;
+                      line-height: 18px;
+                      color: #9c8d7c;
+                    "
+                  >
+                    © CleverRenta. Все права защищены.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>

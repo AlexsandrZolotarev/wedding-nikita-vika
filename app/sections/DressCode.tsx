@@ -6,6 +6,28 @@ import { useInView } from "../hooks/use-in-view";
 const dressCodeData = [
   {
     id: 1,
+    color: "Мятный",
+    images: [
+      "/dress-code/girls/mint1_compressed.jpeg",
+      "/dress-code/girls/mint2_compressed.jpeg",
+      "/dress-code/girls/mint3_compressed.jpeg",
+      "/dress-code/girls/mint4_compressed.jpeg",
+    ],
+  },
+
+  {
+    id: 4,
+    color: "Светло-серый",
+    images: [
+      "/dress-code/girls/light-grey1_compressed.jpeg",
+      "/dress-code/girls/light-grey2.png",
+      "/dress-code/girls/light-grey3_compressed.jpeg",
+      "/dress-code/girls/light-grey4_compressed.jpeg",
+    ],
+  },
+
+  {
+    id: 6,
     color: "Бежевый",
     images: [
       "/dress-code/girls/beige1.jpg",
@@ -15,28 +37,8 @@ const dressCodeData = [
     ],
   },
   {
-    id: 2,
-    color: "Светло-серый",
-    images: [
-      "/dress-code/girls/light-grey1_compressed.jpeg",
-      "/dress-code/girls/light-grey2.png",
-      "/dress-code/girls/light-grey3_compressed.jpeg",
-      "/dress-code/girls/light-grey4_compressed.jpeg",
-    ],
-  },
-  {
-    id: 3,
-    color: "Мятный",
-    images: [
-      "/dress-code/girls/mint1_compressed.jpeg",
-      "/dress-code/girls/mint2_compressed.jpeg",
-      "/dress-code/girls/mint3_compressed.jpeg",
-      "/dress-code/girls/mint4_compressed.jpeg",
-    ],
-  },
-  {
-    id: 4,
-    color: "Светло-коричневый",
+    id: 7,
+    color: "Темно коричневый",
     images: [
       "/dress-code/girls/light-brown1.jpeg",
       "/dress-code/girls/light-brown2.jpg",
@@ -45,7 +47,7 @@ const dressCodeData = [
     ],
   },
   {
-    id: 5,
+    id: 8,
     color: "Мятный (муж.)",
     images: [
       "/dress-code/mens/mint.jpg",
@@ -55,7 +57,7 @@ const dressCodeData = [
     ],
   },
   {
-    id: 6,
+    id: 9,
     color: "Светло-серый (муж.)",
     images: [
       "/dress-code/mens/light-gray.jpg",
@@ -65,7 +67,7 @@ const dressCodeData = [
     ],
   },
   {
-    id: 7,
+    id: 10,
     color: "Светло-зеленый  (муж.)",
     images: [
       "/dress-code/mens/light-green.jpg",
@@ -75,8 +77,18 @@ const dressCodeData = [
     ],
   },
   {
-    id: 8,
+    id: 11,
     color: "Светло-коричневый (муж.)",
+    images: [
+      "/dress-code/mens/light-brown1.jpg",
+      "/dress-code/mens/light-brown2.jpg",
+      "/dress-code/mens/light-brown3.jpg",
+      "/dress-code/mens/light-brown4.jpg",
+    ],
+  },
+  {
+    id: 12,
+    color: "Темно коричневый (муж.)",
     images: [
       "/dress-code/mens/light-brown1.jpg",
       "/dress-code/mens/light-brown2.jpg",
@@ -156,6 +168,7 @@ const DressCode = () => {
           {/* <img src="/dress-code.jpg" alt="" /> */}
           <p>Светло-коричневый</p>
         </div>
+
         <div
           className={`dress-code__colors-item ${isInView ? "dress-code__colors-item--visible" : ""}`}
         >
@@ -165,6 +178,12 @@ const DressCode = () => {
           className={`dress-code__colors-item ${isInView ? "dress-code__colors-item--visible" : ""}`}
         >
           <p>Светло-серый</p>
+        </div>
+        <div
+          className={`dress-code__colors-item ${isInView ? "dress-code__colors-item--visible" : ""}`}
+        >
+          {/* <img src="/dress-code.jpg" alt="" /> */}
+          <p>Темно-коричневый</p>
         </div>
       </div>
 

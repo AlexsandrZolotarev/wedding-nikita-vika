@@ -121,6 +121,9 @@
           position: absolute;
           color: white;
           transform: rotate(270deg) translateX(-70px);
+          @include mobile {
+            transform: rotate(270deg) translateX(-50px);
+          }
         }
       }
       &:nth-child(4) {
@@ -136,6 +139,21 @@
         p {
           transform: rotate(270deg) translateX(-35px);
         }
+      }
+      &:nth-child(6) {
+        --item-index: 6;
+        background-color: #654321;
+
+        p {
+          color: white;
+          transform: rotate(270deg) translateX(-60px);
+          @include mobile {
+            transform: rotate(270deg) translateX(-50px);
+          }
+        }
+      }
+      @include mobile {
+        width: 40px;
       }
     }
   }
